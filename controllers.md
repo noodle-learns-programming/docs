@@ -63,7 +63,11 @@ Now, when a request matches the specified route URI, the `showProfile` method on
 
 It is very important to note that we did not need to specify the full controller namespace when defining the controller route. We only defined the portion of the class name that comes after the `App\Http\Controllers` namespace "root". By default, the `RouteServiceProvider` will load the `routes.php` file within a route group containing the root controller namespace.
 
+[vi] Điều quan trọng phải note lại là chúng ta không cần phải xác định cụ thể full controller namespace khi định nghĩa controller route. Chúng ta chỉ cần định nghĩa portion của cái class name mà nó đi theo sau `App\Http\Controlers` namespace "root". Bởi mặc định, `RouteServiceProvider` sẽ load `routes.php` file bên trong một route group chứa root controller namespace.
+
 If you choose to nest or organize your controllers using PHP namespaces deeper into the `App\Http\Controllers` directory, simply use the specific class name relative to the `App\Http\Controllers` root namespace. So, if your full controller class is `App\Http\Controllers\Photos\AdminController`, you would register a route like so:
+
+[vi] Nếu bạn muốn chọn để nest hoặc organize controllers của mình sử dụng sâu hơn PHP namespaces đến thư mục `App\Http\Controllers`, sử dụng (đơn giản?) class (xác định?) chỉ đến `App\Http\Controllers` root namespace. Vậy, nếu bạn muốn đầy đủ controller class là `App\Http\Controllers\Photo\AdminController`, bạn sẽ muốn đăng kí một route dạng như vầy:
 
     Route::get('foo', 'Photos\AdminController@method');
 
@@ -71,13 +75,19 @@ If you choose to nest or organize your controllers using PHP namespaces deeper i
 
 Like Closure routes, you may specify names on controller routes:
 
+[vi] Như những Closure routes, bạn có lẽ muốn xác định tên của những controller routes.
+
     Route::get('foo', ['uses' => 'FooController@method', 'as' => 'name']);
 
 Once you have assigned a name to the controller route, you can easily generate URLs to the action. To generate a URL to a controller action, use the `action` helper method. Again, we only need to specify the part of the controller class name that comes after the base `App\Http\Controllers` namespace:
 
+[vi] Một khi bạn vừa gán một tên đến controller route, bạn sẽ có thể đơn giản(?) generate(?) những URLs đến action. Để tạo (generate) một URL đến một controller action, sử dụng `action` helper method. Một lần nữa, chúng ta chỉ cần xác định cái phần (the part) của controller class name mà nó đi theo (come) `App\Http\Controllers` namespaces:
+
     $url = action('FooController@method');
 
 You may also use the `route` helper to generate a URL to a named controller route:
+
+[vi] Bạn cũng có thể sử dụng `route` helper để generate một URL để xác định(chỉ ra/đặt tên) (name) controller router:
 
     $url = route('name');
 
@@ -92,6 +102,8 @@ You may also use the `route` helper to generate a URL to a named controller rout
     ]);
 
 However, it is more convenient to specify middleware within your controller's constructor. Using the `middleware` method from your controller's constructor, you may easily assign middleware to the controller. You may even restrict the middleware to only certain methods on the controller class:
+
+[vi] Tuy nhiên, có điều thuận lợi để xác định middleware bên trọng controller's constructor của bạn. Sử dụng `middleware` method từ controller's constructor của bạn, bạn có thể assign dễ dàng middleware đến controller. Bạn có thể giới hạn (restrict) middleware để chỉ những methods xác định (certain: cụ thể/chắc chắn) ở controller classs:
 
     class UserController extends Controller
     {
@@ -109,6 +121,8 @@ However, it is more convenient to specify middleware within your controller's co
             $this->middleware('subscribed', ['except' => ['fooAction', 'barAction']]);
         }
     }
+    
+[note] Chỗ này không hiểu gì hết trơn.
 
 <a name="restful-resource-controllers"></a>
 ## RESTful Resource Controllers
