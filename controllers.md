@@ -24,6 +24,9 @@ Instead of defining all of your request handling logic in a single `routes.php` 
 
 Here is an example of a basic controller class. All Laravel controllers should extend the base controller class included with the default Laravel installation:
 
+[vi] Sau đây là một ví dụ về một controller class đơn giản. Tất cả những Laravel controllers phải kế thừa base controller class đã được bổ sung mặc định trong quá trình cài đặt Laravel.
+[note] Dịch chỗ này sẽ làm việc viết và nói tiếng Anh của mình trở nên khó sau này. Vì chuyển ngữ sai ngữ pháp.
+
     <?php
 
     namespace App\Http\Controllers;
@@ -46,10 +49,13 @@ Here is an example of a basic controller class. All Laravel controllers should e
     }
 
 We can route to the controller action like so:
+[vi] Chúng ta có thể route đến controller action như vầy:
 
     Route::get('user/{id}', 'UserController@showProfile');
 
 Now, when a request matches the specified route URI, the `showProfile` method on the `UserController` class will be executed. Of course, the route parameters will also be passed to the method.
+
+Bây giờ, khi một request mà match với một route URI xác định, `showProfile` method trong `UserController` class sẽ được thực thi. Tất nhiên, những route parameters cũng sẽ được passed đến method.
 
 #### Controllers & Namespaces
 
