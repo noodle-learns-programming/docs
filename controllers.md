@@ -17,6 +17,8 @@
 
 Instead of defining all of your request handling logic in a single `routes.php` file, you may wish to organize this behavior using Controller classes. Controllers can group related HTTP request handling logic into a class. Controllers are typically stored in the `app/Http/Controllers` directory.
 
+[vi] Thay vì phải định nghĩa tất cả những việc quản lý logic cho những request của bạn trong một file `routes.php` duy nhất, có lẽ bạn sẽ muốn tổ chức hành vi này bằng cách sử dụng Controller classes. Những Controllers có thể gom lại logic xử lý trong mỗi request liên quan với nhau vào một class. Những Controllers thường được lưu trữ trong thư mục `app/Http/Controllers`.
+
 <a name="basic-controllers"></a>
 ## Basic Controllers
 
