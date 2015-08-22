@@ -24,6 +24,8 @@
 
 You will define most of the routes for your application in the `app/Http/routes.php` file, which is loaded by the `App\Providers\RouteServiceProvider` class. The most basic Laravel routes simply accept a URI and a `Closure`:
 
+Bạn sẽ định nghĩa hầu hết của những routes cho ứng dụng, cái này được load trong cái 
+
     Route::get('/', function () {
         return 'Hello World';
     });
