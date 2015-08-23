@@ -24,7 +24,7 @@
 
 You will define most of the routes for your application in the `app/Http/routes.php` file, which is loaded by the `App\Providers\RouteServiceProvider` class. The most basic Laravel routes simply accept a URI and a `Closure`:
 
-Bạn sẽ định nghĩa hầu hết của những routes cho ứng dụng, cái này được load trong cái 
+[vi] Bạn sẽ định nghĩa hầu hết của những routes cho ứng dụng trong file `app/Http/routes.php`, nó được load bởi `App\Providers\RoutServiceProvider` class. Hầu hết những Laravel routes cơ bản chấp nhận một URI và một `Closure`:
 
     Route::get('/', function () {
         return 'Hello World';
@@ -46,11 +46,15 @@ Bạn sẽ định nghĩa hầu hết của những routes cho ứng dụng, cá
 
 Sometimes you may need to register a route that responds to multiple HTTP verbs. You may do so using the `match` method on the `Route` [facade](/docs/{{version}}/facades):
 
+[vi] Thỉnh thoảng, bạn cần đăng kí một route mà nó trả về nhiều Http verbs. Bạn cũng sẽ phải làm the `match` method ở `Route` [facade](/docs/{{version}}/facades):
+
     Route::match(['get', 'post'], '/', function () {
         return 'Hello World';
     });
 
 Or, you may even register a route that responds to all HTTP verbs using the `any` method:
+
+[vi] Hoặc, bạn thậm chí có thể đăng kí một cái route mà nó trả về tất cả HTTP verbs bằng cách sử dụng `any` method:
 
     Route::any('foo', function () {
         return 'Hello World';
@@ -59,6 +63,8 @@ Or, you may even register a route that responds to all HTTP verbs using the `any
 #### Generating URLs To Routes
 
 You may generate URLs to your application's routes using the `url` helper:
+
+[vi] Bạn cũng có thể tạo ra những URLs cho routes của ứng ứng dụng bằng cách sử dụng `url` helper:
 
     $url = url('foo');
 
@@ -70,11 +76,15 @@ You may generate URLs to your application's routes using the `url` helper:
 
 Of course, sometimes you will need to capture segments of the URI within your route. For example, you may need to capture a user's ID from the URL. You may do so by defining route parameters:
 
+[vi] Tất nhiên, thỉnh thoảng bạn sẽ cần phải capture segments của URI bên trong route của mình. Ví dụ, bạn có thể cần để capture một Id của user từ cái URL. Bạn có thể làm như vầy bởi định nghĩa những route parameters:
+
     Route::get('user/{id}', function ($id) {
         return 'User '.$id;
     });
 
 You may define as many route parameters as required by your route:
+
+[vi] Bạn có thể định nghĩa nhiều parameters tùy ý được đòi hỏi bởi route của mình:
 
     Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
         //
